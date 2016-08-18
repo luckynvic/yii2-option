@@ -38,7 +38,7 @@ class OptionComponent extends Component
             }
         }
 
-        $content = $model->content;
+        $content = Json::decode($model->content);
         if($index!==null)
             $content[$index] = $value;
         else
