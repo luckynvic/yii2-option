@@ -1,0 +1,19 @@
+{
+    "name": "luckynvic/yii2-option",
+    "type": "yii2-extension",
+    "description": "Yii2 extension to save named value pairs",
+    "keywords": ["yii2", "setting", "option", "component"],
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/luckynvic/yii2-option",
+    "authors": [
+        {
+            "name": "Lucky Vic",
+            "email": "luckynvic@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "luckynvic\\option\\": ""
+        }
+    }
+}
