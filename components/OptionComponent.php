@@ -17,7 +17,7 @@ class OptionComponent extends Component
             if(($model = OptionModel::findOne($id))===null)
               return $default;
             $content = Json::decode($model->content);
-            Yii::$app->cache->set(Option::CACHE_PREFIX.$id, $content);
+            Yii::$app->cache->set(OptionModel::CACHE_PREFIX.$id, $content);
         }
         if($index!==null && is_array($content))
             return array_key_exists($index, $content)?$content[$index]:$default;
@@ -52,11 +52,13 @@ class OptionComponent extends Component
 
     public function delete($id, $index=null)
     {
-        if(($content=$this->get($id, $index, null))===null)
+        if(($content=$this->get($id))===null)
             return;
         if($index!==null) {
-            unset($content[$index]);
-            $this->set($id, $content, $index);
+            if(is_array($content) && array_key_exists($index, $content)) {
+                unset($content[$index]);
+                $this->set($id, $content);
+            }
         } else
             $this->set($id, null);
     }
