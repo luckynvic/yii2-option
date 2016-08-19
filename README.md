@@ -60,7 +60,7 @@ $progress = Yii::$app->option->get('state_list', 'O');
 Yii::$app->option->delete('state_list'); // or Yii::$app->option->set('state_list', null);
 
 // delete only one item
-Yii::$app->option->delete('state_list', 'C'); // or Yii::$app->option->set('state_list', 'C', null);
+Yii::$app->option->delete('state_list', 'C'); // or Yii::$app->option->set('state_list', null, 'C');
 ```
 **Note:** set value to `null` make item will be deleted.
 
