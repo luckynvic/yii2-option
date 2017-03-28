@@ -13,10 +13,10 @@ class m160818_000522_create_option_table extends Migration
     public function up()
     {
         $this->createTable('option', [
-            'id' => $this->primaryKey(),
             'id' => $this->string(),
             'content' => $this->text(),
         ]);
+        $this->addPrimaryKey('option_pk', 'option', 'id');
     }
 
     /**
