@@ -85,8 +85,11 @@ class User extends  implements IdentityInterface
 
 // usage in app
 $model->findOne(1);
-// get user background color for user 
+// get user background color for user, default blue
 $color = $model->getOption('background', 'color', 'blue');
+
+// set background color to red
+$color = $model->getOption('background', 'red', 'color');
 
 ```
 

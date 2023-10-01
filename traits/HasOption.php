@@ -7,7 +7,7 @@ trait HasOption {
     protected function optionKey()
     {
         $key = serialize($this->getPrimaryKey());
-        return md5($key.self::class);
+        return sprintf('%x', crc32($key.self::class));
     }
 
     private function getOptionId($id)
