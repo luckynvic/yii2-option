@@ -64,6 +64,33 @@ Yii::$app->option->delete('state_list', 'C'); // or Yii::$app->option->set('stat
 ```
 **Note:** set value to `null` make item will be deleted.
 
+### Context
+
+This extension allow option save based on its context. ie option for User.
+```php
+
+
+class User extends  implements IdentityInterface
+{
+	// add trait
+	use \luckynvic\option\traits\HasOption;
+
+	// optional to configure context key
+	protected function optionKey()
+	{
+		return 'user-'.$this->id;
+	}
+
+}
+
+// usage in app
+$model->findOne(1);
+// get user background color for user 
+$color = $model->getOption('background', 'color', 'blue');
+
+```
+
+
 
 ## Author
 * Lucky Vic (luckynvic@gmail.com)
