@@ -29,7 +29,7 @@ class OptionModel extends \yii\db\ActiveRecord
         return [
             [['id'], 'required'],
             [['content'], 'string'],
-            [['id'], 'string', 'max' => 30],
+            [['id'], 'string', 'max' => 255],
         ];
     }
 
@@ -42,6 +42,11 @@ class OptionModel extends \yii\db\ActiveRecord
             'id' => 'ID',
             'content' => 'Content',
         ];
+    }
+
+    public function firstErrorSummary() {
+        $first = $this->firstErrors;
+        return implode(" ", array_values($first));
     }
 
 }

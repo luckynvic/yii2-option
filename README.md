@@ -89,7 +89,7 @@ $model->findOne(1);
 $color = $model->getOption('background', 'color', 'blue');
 
 // set background color to red
-$color = $model->getOption('background', 'red', 'color');
+$color = $model->setOption('background', 'red', 'color');
 
 ```
 
