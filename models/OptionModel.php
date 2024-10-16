@@ -44,4 +44,9 @@ class OptionModel extends \yii\db\ActiveRecord
         ];
     }
 
+    public function firstErrorSummary() {
+        $first = $this->firstErrors;
+        return implode(" ", array_values($first));
+    }
+
 }
