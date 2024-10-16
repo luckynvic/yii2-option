@@ -52,6 +52,8 @@ class OptionComponent extends Component
         $model->content = Json::encode($content);
         if($model->save())
             Yii::$app->cache->set(OptionModel::CACHE_PREFIX.$id, $content);
+        else
+            throw new Exception($model->firstErrorSummary());
     }
 
     public function delete($id, $index=null)
