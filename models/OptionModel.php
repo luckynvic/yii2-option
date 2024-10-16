@@ -29,7 +29,7 @@ class OptionModel extends \yii\db\ActiveRecord
         return [
             [['id'], 'required'],
             [['content'], 'string'],
-            [['id'], 'string', 'max' => 30],
+            [['id'], 'string', 'max' => 255],
         ];
     }
 
